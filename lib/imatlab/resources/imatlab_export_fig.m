@@ -52,7 +52,8 @@ function exported = imatlab_export_fig(exporter)
                 exported{i} = [name, '.html'];
                 try
                     fig2plotly(children(i), 'filename', name, ...
-                               'offline', true, 'open', false);
+                               'offline', true, 'open', false, ...
+                               'include_plotlyjs', false);
                 catch me
                     warning('fig2plotly failed to export a figure');
                     rethrow(me);
